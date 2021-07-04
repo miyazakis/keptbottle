@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:keptbottle/views/menu.dart';
+import 'package:keptbottle/views/top.dart';
 
 class LoginView extends StatelessWidget {
   @override
@@ -12,41 +12,43 @@ class LoginView extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(top: 60),
+            const Padding(
+              padding: EdgeInsets.only(top: 120),
               child: Center(
-                child: Container(
-                  width: 200,
-                  height: 150,
-                  child: Image.asset('asset/images/flutter-logo.png'),
+                child: SizedBox(
+                  height: 120,
                 ),
               ),
             ),
-            Padding(
-              //padding: const EdgeInsets.only(left:15.0,right: 15.0,top:0,bottom: 0),
+            const Padding(
               padding: EdgeInsets.symmetric(horizontal: 15),
               child: TextField(
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Email',
-                    hintText: 'Enter valid email id as abc@gmail.com'),
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
+                  hintText: 'Enter valid email id as abc@gmail.com',
+                ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  left: 15, right: 15, top: 15, bottom: 0),
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 15,
+                right: 15,
+                top: 15,
+                bottom: 0,
+              ),
               child: TextField(
                 obscureText: true,
                 decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter secure password'),
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
+                  hintText: 'Enter secure password',
+                ),
               ),
             ),
             FlatButton(
-              onPressed: (){
-              },
-              child: Text(
+              onPressed: () {},
+              child: const Text(
                 'Forgot Password',
                 style: TextStyle(color: Colors.blue, fontSize: 15),
               ),
@@ -55,22 +57,31 @@ class LoginView extends StatelessWidget {
               height: 50,
               width: 250,
               decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(20)),
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(20),
+              ),
               child: FlatButton(
                 onPressed: () {
                   Navigator.push(
-                      context, MaterialPageRoute<MenuView>(builder: (_) => MenuView()));
+                    context,
+                    MaterialPageRoute<TopView>(
+                      builder: (_) => TopView(),
+                    ),
+                  );
                 },
-                child: Text(
+                child: const Text(
                   'Login',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25,
+                  ),
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 130,
             ),
-            Text('New User? Create Account')
+            const Text('New User? Create Account')
           ],
         ),
       ),
